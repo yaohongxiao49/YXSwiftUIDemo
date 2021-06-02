@@ -8,32 +8,36 @@
 import SwiftUI
 
 struct MapDetailView: View {
+    
+    var landmark: Landmark
+    
     var body: some View {
         VStack {
-            MapView()
+            MapView(coordinate: landmark.locationCoordinate)
                 .frame(height: 300)
                 .edgesIgnoringSafeArea(.top)
-            CircleImgV()
+            CircleImgV(image: landmark.image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
             VStack(alignment: .leading) {
-                Text("我是标题")
+                Text(landmark.name)
                     .font(.title)
                 HStack {
-                    Text("我是描述")
+                    Text(landmark.park)
                         .font(.subheadline)
                     Spacer()
-                    Text("我是内容")
+                    Text(landmark.state)
                         .font(.subheadline)
                 }
             }.padding()
             Spacer()
         }
+        .navigationBarTitle(Text(landmark.name), displayMode: .inline)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MapDetailView()
+        MapDetailView(landmark: landmarkData[0])
     }
 }

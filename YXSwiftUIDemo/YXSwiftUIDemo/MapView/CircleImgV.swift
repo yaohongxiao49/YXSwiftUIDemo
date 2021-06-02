@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct CircleImgV: View {
+    
+    var image: Image
+    
     var body: some View {
-        Image("ClockImg")
+//        Image("ClockImg")
+        image
             .renderingMode(.original)
             .aspectRatio(contentMode: .fill)
             .background(Color.black)
@@ -22,6 +26,6 @@ struct CircleImgV: View {
 
 struct CircleImgV_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImgV()
+        CircleImgV(image: Image("ClockImg"))
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct YXSwiftUIDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            MapDetailView()
+            ListView()
         }
     }
 }

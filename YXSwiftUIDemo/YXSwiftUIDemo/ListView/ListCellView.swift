@@ -24,6 +24,10 @@ struct ListCellView: View {
 
 struct ListCellView_Previews: PreviewProvider {
     static var previews: some View {
-        ListCellView(landmark: landmarkData[0])
+        Group {
+            ListCellView(landmark: landmarkData[0])
+            ListCellView(landmark: landmarkData[1])
+        }
+        .previewLayout(.fixed(width: 300, height: 70))
     }
 }
